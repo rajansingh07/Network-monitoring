@@ -309,10 +309,10 @@ https://github.com/rajansingh07/Network-monitoring
 
 ## 👨‍💻 Author
 
-Rajan Kumar
-(Frontend Developer)
+**Rajan Kumar**
+Frontend Developer
 
-Aditya Singh
-(Backend Developer)
+**Aditya Singh**
+Backend Developer
 
 ---
