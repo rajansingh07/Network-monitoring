@@ -1,0 +1,141 @@
+body {
+	background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 55%),
+							radial-gradient(circle at bottom, rgba(129, 140, 248, 0.15), transparent 55%),
+							#020617;
+}
+
+.app-bg-overlay {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.app-bg-overlay::before,
+.app-bg-overlay::after {
+	content: "";
+	position: absolute;
+	width: 520px;
+	height: 520px;
+	border-radius: 9999px;
+	filter: blur(60px);
+	opacity: 0.35;
+}
+
+.app-bg-overlay::before {
+	top: -120px;
+	left: -80px;
+	background: radial-gradient(circle, rgba(56, 189, 248, 0.55), transparent 60%);
+	animation: floatGlow 18s ease-in-out infinite alternate;
+}
+
+.app-bg-overlay::after {
+	bottom: -140px;
+	right: -120px;
+	background: radial-gradient(circle, rgba(129, 140, 248, 0.5), transparent 60%);
+	animation: floatGlowReverse 22s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	50% {
+		transform: translate3d(40px, 20px, 0) scale(1.05);
+	}
+	100% {
+		transform: translate3d(10px, -10px, 0) scale(1.02);
+	}
+}
+
+@keyframes floatGlowReverse {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	50% {
+		transform: translate3d(-30px, -20px, 0) scale(1.04);
+	}
+	100% {
+		transform: translate3d(-10px, 15px, 0) scale(1.01);
+	}
+}
+
+.card-glow {
+	position: relative;
+}
+
+.card-glow::before {
+	content: "";
+	position: absolute;
+	inset: -1px;
+	border-radius: inherit;
+	background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 60%),
+							radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.18), transparent 60%);
+	opacity: 0;
+	transition: opacity 250ms ease-out;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.card-glow:hover::before {
+	opacity: 1;
+}
+
+.noise-layer {
+	pointer-events: none;
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	opacity: 0.07;
+	mix-blend-mode: soft-light;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar / slider theming */
+
+:root {
+	color-scheme: dark;
+}
+
+/* Global scrollbar */
+body::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #020617;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, #38bdf8, #6366f1);
+	border-radius: 9999px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, #0ea5e9, #4f46e5);
+}
+
+/* Focused scrollable panels */
+.custom-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: #38bdf8 #020617;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 7px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, rgba(56,189,248,0.8), rgba(129,140,248,0.8));
+	border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, #38bdf8, #6366f1);
+}
+
