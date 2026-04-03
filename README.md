@@ -1,4 +1,4 @@
-# NetMonitor Pro v2.0 – Network Monitoring Dashboard
+# NetMonitor – Network Monitoring Dashboard
 
 ## 📌 Overview
 
